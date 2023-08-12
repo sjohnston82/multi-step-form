@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import { styled } from "styled-components";
 import MobileBanner from "../../public/images/bg-sidebar-mobile.svg";
 import StepCounter from "./_components/StepCounter";
+import FormOneContainer from "./_components/FormOneContainer";
 
 const BackgroundImageMobile = styled.div`
   position: absolute;
@@ -36,6 +37,7 @@ export default function Home() {
         <StyledImage src={MobileBanner} alt="Mobile sized background banner." />
       </BackgroundImageMobile>
       <StepCounter />
+      <FormOneContainer />
     </StyledMain>
   );
 }

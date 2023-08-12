@@ -7,17 +7,17 @@ const StepCounterWrapper = styled.div`
   position: relative;
   justify-content: center;
   margin-top: 1.5rem;
-  gap: 0.45rem;
+  gap: 0.8rem;
 `;
 
 
 const StepCounter = () => {
   const { step, setStep } = useFormContext();
-  const StyledStep = styled.div<{ $step?: number }>`
+  const StyledStep = styled.div<{ $step: number }>`
     border-radius: 50%;
     color: ${(props) => (props.$step === step ? 'var(--marine-blue)' : "white")};
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.3rem;
+    height: 2.3rem;
     font-weight: 700;
     border: 1px solid white;
     display: flex;
