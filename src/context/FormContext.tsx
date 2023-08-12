@@ -48,7 +48,7 @@ export const FormContext = createContext<FormContextType>(
 );
 
 const FormContextProvider = ({ children }: FormContextProviderProps) => {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
   const [step1Info, setStep1Info] = useState({
     name: "",
     emailAddress: "",
@@ -92,3 +92,5 @@ export function useFormContext() {
   }
   return context;
 }
+
+export default FormContextProvider;
