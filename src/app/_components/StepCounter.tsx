@@ -13,6 +13,7 @@ const StepCounterWrapper = styled.div`
 
 const StepCounter = () => {
   const { step, setStep } = useFormContext();
+  
   const StyledStep = styled.div<{ $step: number }>`
     border-radius: 50%;
     color: ${(props) => (props.$step === step ? 'var(--marine-blue)' : "white")};

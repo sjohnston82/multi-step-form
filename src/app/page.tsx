@@ -6,6 +6,8 @@ import { styled } from "styled-components";
 import MobileBanner from "../../public/images/bg-sidebar-mobile.svg";
 import StepCounter from "./_components/StepCounter";
 import FormOneContainer from "./_components/FormOneContainer";
+import StepChanger from "./_components/StepChanger";
+import { useFormContext } from "@/context/FormContext";
 
 const BackgroundImageMobile = styled.div`
   position: absolute;
@@ -31,13 +33,23 @@ const StyledMain = styled.main`
 `;
 
 export default function Home() {
+  const { step } = useFormContext();
+  function getFormByStep() {
+    if (step === 1) {
+      return <FormOneContainer />;
+    }
+    if (step === 2) {
+      return;
+    }
+  }
   return (
     <StyledMain>
       <BackgroundImageMobile>
         <StyledImage src={MobileBanner} alt="Mobile sized background banner." />
       </BackgroundImageMobile>
       <StepCounter />
-      <FormOneContainer />
+
+      {getFormByStep()}
     </StyledMain>
   );
 }
