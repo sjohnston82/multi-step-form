@@ -3,7 +3,7 @@ import React from "react";
 import { styled } from "styled-components";
 
 type StepChangerProps = {
-  formRef: React.MutableRefObject<HTMLFormElement | null>;
+  formRef?: React.MutableRefObject<HTMLFormElement | null>;
 };
 
 const StepChangeContainer = styled.div`
@@ -71,7 +71,7 @@ const StepChanger = ({ formRef }: StepChangerProps) => {
         <NextButton
           type="submit"
           $step={step}
-          onClick={() => formRef.current?.requestSubmit()}
+          onClick={() => formRef?.current?.requestSubmit()}
         >
           Next Step
         </NextButton>
