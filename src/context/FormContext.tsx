@@ -30,6 +30,8 @@ type FormContextType = {
   setAddOns: React.Dispatch<SetStateAction<AddOnsType>>;
   total: number;
   setTotal: React.Dispatch<SetStateAction<number>>;
+  confirmed: boolean;
+  setConfirmed: React.Dispatch<SetStateAction<boolean>>;
 };
 
 type FormContextProviderProps = {
@@ -62,6 +64,7 @@ const FormContextProvider = ({ children }: FormContextProviderProps) => {
     customizableProfile: false,
   });
   const [total, setTotal] = useState(0);
+   const [confirmed, setConfirmed] = useState(false);
 
   return (
     <FormContext.Provider
@@ -78,6 +81,8 @@ const FormContextProvider = ({ children }: FormContextProviderProps) => {
         setAddOns,
         total,
         setTotal,
+        confirmed,
+        setConfirmed
       }}
     >
       {children}

@@ -102,7 +102,7 @@ const FormTwoContainer = () => {
               <StyledImage src={ArcadeIcon} alt="Arcade Icon" />
               <PlanButtonTextWrapper>
                 <PlanTitle>Arcade</PlanTitle>
-                <PlanCost>{monthly ? "$9/mo" : "$90/year"}</PlanCost>
+                <PlanCost>{monthly ? "$9/mo" : "$90/yr"}</PlanCost>
                 {!monthly && <FreeMonthsText>2 months free</FreeMonthsText>}
               </PlanButtonTextWrapper>
             </PlanButtonContent>
@@ -115,7 +115,7 @@ const FormTwoContainer = () => {
               <StyledImage src={AdvancedIcon} alt="Advanced Icon" />
               <PlanButtonTextWrapper>
                 <PlanTitle>Advanced</PlanTitle>
-                <PlanCost>{monthly ? "$12/mo" : "$120/year"}</PlanCost>
+                <PlanCost>{monthly ? "$12/mo" : "$120/yr"}</PlanCost>
                 {!monthly && <FreeMonthsText>2 months free</FreeMonthsText>}
               </PlanButtonTextWrapper>
             </PlanButtonContent>
@@ -128,7 +128,7 @@ const FormTwoContainer = () => {
               <StyledImage src={ProIcon} alt="Pro icon" />
               <PlanButtonTextWrapper>
                 <PlanTitle>Pro</PlanTitle>
-                <PlanCost>{monthly ? "$15/mo" : "$150/year"}</PlanCost>
+                <PlanCost>{monthly ? "$15/mo" : "$150/yr"}</PlanCost>
                 {!monthly && <FreeMonthsText>2 months free</FreeMonthsText>}
               </PlanButtonTextWrapper>
             </PlanButtonContent>

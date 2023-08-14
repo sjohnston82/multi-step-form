@@ -134,7 +134,7 @@ const FormThreeContainer = () => {
                   </AddOnsDescription>
                 </AddOnsButtonTextWrapper>
               </AddOnsButtonContent>
-              <AddOnsPrice>{monthly ? "+$1/mo" : "+$10/year"}</AddOnsPrice>
+              <AddOnsPrice>{monthly ? "+$1/mo" : "+$10/yr"}</AddOnsPrice>
             </AddOnsWithPriceWrapper>
           </AddOnButton>
           <AddOnButton
@@ -160,7 +160,7 @@ const FormThreeContainer = () => {
                   <AddOnsDescription>Extra 1TB of cloud save</AddOnsDescription>
                 </AddOnsButtonTextWrapper>
               </AddOnsButtonContent>
-              <AddOnsPrice>{monthly ? "+$2/mo" : "+$20/year"}</AddOnsPrice>
+              <AddOnsPrice>{monthly ? "+$2/mo" : "+$20/yr"}</AddOnsPrice>
             </AddOnsWithPriceWrapper>
           </AddOnButton>
           <AddOnButton
@@ -186,7 +186,7 @@ const FormThreeContainer = () => {
                   </AddOnsDescription>
                 </AddOnsButtonTextWrapper>
               </AddOnsButtonContent>
-              <AddOnsPrice>{monthly ? "+$2/mo" : "+$20/year"}</AddOnsPrice>
+              <AddOnsPrice>{monthly ? "+$2/mo" : "+$20/yr"}</AddOnsPrice>
             </AddOnsWithPriceWrapper>
           </AddOnButton>
         </AddOnsButtonGroup>

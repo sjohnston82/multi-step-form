@@ -1,5 +1,5 @@
 import { useFormContext } from "@/context/FormContext";
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
 
 type StepChangerProps = {
@@ -41,7 +41,7 @@ const PreviousButton = styled.button<{ $step: number }>`
   }
 `;
 
-const NextButton = styled.button<{ $step: number }>`
+const NextButton = styled.button`
   color: var(--light-gray);
   background-color: var(--marine-blue);
   outline: none;
@@ -59,8 +59,10 @@ const NextButton = styled.button<{ $step: number }>`
   }
 `;
 
+const ConfirmButton = styled(NextButton)``;
+
 const StepChanger = ({ formRef }: StepChangerProps) => {
-  const { step, setStep } = useFormContext();
+  const { step, setStep, setConfirmed } = useFormContext();
 
   return (
     <StepChangeContainer>
@@ -68,17 +70,22 @@ const StepChanger = ({ formRef }: StepChangerProps) => {
         <PreviousButton $step={step} onClick={() => setStep(step - 1)}>
           Go Back
         </PreviousButton>
-        <NextButton
-          type="submit"
-          $step={step}
-          onClick={
-            formRef?.current || step === 1
-              ? () => formRef?.current?.requestSubmit()
-              : () => setStep(step + 1)
-          }
-        >
-          Next Step
-        </NextButton>
+        {step === 4 ? (
+          <ConfirmButton onClick={() => setConfirmed(true)}>
+            Confirm
+          </ConfirmButton>
+        ) : (
+          <NextButton
+            type="submit"
+            onClick={
+              formRef?.current || step === 1
+                ? () => formRef?.current?.requestSubmit()
+                : () => setStep(step + 1)
+            }
+          >
+            Next Step
+          </NextButton>
+        )}
       </ButtonWrapper>
     </StepChangeContainer>
   );
