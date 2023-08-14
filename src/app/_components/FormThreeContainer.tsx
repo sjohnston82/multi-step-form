@@ -52,6 +52,11 @@ const AddOnButton = styled.button<{ isSelected: boolean }>`
     props.isSelected
       ? "1px solid var(--purplish-blue)"
       : "1px solid var(--light-gray)"};
+
+  &:hover {
+    border: 1px solid var(--purplish-blue);
+  }
+  cursor: pointer;
 `;
 
 const StyledCheckbox = styled.input<{ isSelected: boolean }>`
@@ -88,7 +93,7 @@ const AddOnsTitle = styled.p`
 
 const AddOnsPrice = styled.p`
   color: var(--purplish-blue);
-`
+`;
 
 const AddOnsDescription = styled.p`
   color: var(--cool-gray);
