@@ -6,6 +6,7 @@ import ArcadeIcon from "../../../public/images/icon-arcade.svg";
 import AdvancedIcon from "../../../public/images/icon-advanced.svg";
 import ProIcon from "../../../public/images/icon-pro.svg";
 import Image from "next/image";
+import BillCycleToggle from "./BillCycleToggle";
 
 const FormTwoWrapper = styled.div`
   width: 90vw;
@@ -38,33 +39,6 @@ const PlanButtonGroup = styled.div`
   gap: 1rem;
 `;
 
-// const ArcadeButton = styled.button<{ $plan: string }>`
-//   width: 100%;
-//   border: 1px solid
-//     ${(props) =>
-//       props.$plan === "arcade" ? "var(--purplish-blue)" : "var(--light-gray"};
-//   border-radius: 8px;
-//   background-color: transparent;
-// `;
-
-// const AdvancedButton = styled.button<{ $plan: string }>`
-//   width: 100%;
-//   border: 1px solid
-//     ${(props) =>
-//       props.$plan === plan ? "var(--purplish-blue)" : "var(--light-gray"};
-//   border-radius: 8px;
-//   background-color: transparent;
-// `;
-
-// const ProButton = styled.button<{ $plan: string }>`
-//   width: 100%;
-//   border: 1px solid
-//     ${(props) =>
-//       props.$plan === "pro" ? "var(--purplish-blue)" : "var(--light-gray"};
-//   border-radius: 8px;
-//   background-color: transparent;
-// `;
-
 const PlanButtonContent = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -76,9 +50,13 @@ const PlanButtonTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   font-family: var(--font-ubuntu);
-  gap: 4px;
+  gap: 6px;
   align-items: flex-start;
   justify-content: center;
+`;
+
+const FreeMonthsText = styled.p`
+  color: var(--marine-blue);
 `;
 
 const StyledImage = styled(Image)``;
@@ -97,7 +75,7 @@ const PlanCost = styled.p`
 const FormTwoContainer = () => {
   const { plan, setPlan, monthly } = useFormContext();
 
-  const PlanButton = styled.button<{ $plan: string; isSelected: boolean }>`
+  const PlanButton = styled.button<{ isSelected: boolean }>`
     width: 100%;
     border-radius: 8px;
     background-color: transparent;
@@ -117,7 +95,6 @@ const FormTwoContainer = () => {
         </FormTwoSubheading>
         <PlanButtonGroup>
           <PlanButton
-            $plan={"arcade"}
             isSelected={plan === "arcade"}
             onClick={() => setPlan("arcade")}
           >
@@ -125,12 +102,12 @@ const FormTwoContainer = () => {
               <StyledImage src={ArcadeIcon} alt="Arcade Icon" />
               <PlanButtonTextWrapper>
                 <PlanTitle>Arcade</PlanTitle>
-                <PlanCost>$9/mo</PlanCost>
+                <PlanCost>{monthly ? "$9/mo" : "$90/year"}</PlanCost>
+                {!monthly && <FreeMonthsText>2 months free</FreeMonthsText>}
               </PlanButtonTextWrapper>
             </PlanButtonContent>
           </PlanButton>
           <PlanButton
-            $plan={"advanced"}
             isSelected={plan === "advanced"}
             onClick={() => setPlan("advanced")}
           >
@@ -138,12 +115,12 @@ const FormTwoContainer = () => {
               <StyledImage src={AdvancedIcon} alt="Advanced Icon" />
               <PlanButtonTextWrapper>
                 <PlanTitle>Advanced</PlanTitle>
-                <PlanCost>$12/mo</PlanCost>
+                <PlanCost>{monthly ? "$12/mo" : "$120/year"}</PlanCost>
+                {!monthly && <FreeMonthsText>2 months free</FreeMonthsText>}
               </PlanButtonTextWrapper>
             </PlanButtonContent>
           </PlanButton>
           <PlanButton
-            $plan={"pro"}
             isSelected={plan === "pro"}
             onClick={() => setPlan("pro")}
           >
@@ -151,11 +128,13 @@ const FormTwoContainer = () => {
               <StyledImage src={ProIcon} alt="Pro icon" />
               <PlanButtonTextWrapper>
                 <PlanTitle>Pro</PlanTitle>
-                <PlanCost>$15/mo</PlanCost>
+                <PlanCost>{monthly ? "$15/mo" : "$150/year"}</PlanCost>
+                {!monthly && <FreeMonthsText>2 months free</FreeMonthsText>}
               </PlanButtonTextWrapper>
             </PlanButtonContent>
           </PlanButton>
         </PlanButtonGroup>
+        <BillCycleToggle />
       </FormTwoWrapper>
       <StepChanger />
     </div>
