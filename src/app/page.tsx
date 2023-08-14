@@ -9,6 +9,7 @@ import FormOneContainer from "./_components/FormOneContainer";
 import StepChanger from "./_components/StepChanger";
 import { useFormContext } from "@/context/FormContext";
 import FormTwoContainer from "./_components/FormTwoContainer";
+import FormThreeContainer from "./_components/FormThreeContainer";
 
 const BackgroundImageMobile = styled.div`
   position: absolute;
@@ -41,6 +42,9 @@ export default function Home() {
     }
     if (step === 2) {
       return <FormTwoContainer />;
+    }
+    if (step === 3) {
+      return <FormThreeContainer />;
     }
   }
   return (

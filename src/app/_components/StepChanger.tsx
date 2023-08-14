@@ -71,7 +71,11 @@ const StepChanger = ({ formRef }: StepChangerProps) => {
         <NextButton
           type="submit"
           $step={step}
-          onClick={() => formRef?.current?.requestSubmit()}
+          onClick={
+            formRef?.current || step === 1
+              ? () => formRef?.current?.requestSubmit()
+              : () => setStep(step + 1)
+          }
         >
           Next Step
         </NextButton>

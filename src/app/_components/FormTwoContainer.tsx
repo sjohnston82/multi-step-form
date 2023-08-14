@@ -72,19 +72,19 @@ const PlanCost = styled.p`
   color: var(--cool-gray);
 `;
 
+const PlanButton = styled.button<{ isSelected: boolean }>`
+  width: 100%;
+  border-radius: 8px;
+  background-color: transparent;
+  outline: none;
+  border: ${(props) =>
+    props.isSelected
+      ? "1px solid var(--purplish-blue)"
+      : "1px solid var(--light-gray)"};
+`;
+
 const FormTwoContainer = () => {
   const { plan, setPlan, monthly } = useFormContext();
-
-  const PlanButton = styled.button<{ isSelected: boolean }>`
-    width: 100%;
-    border-radius: 8px;
-    background-color: transparent;
-    outline: none;
-    border: ${(props) =>
-      props.isSelected
-        ? "1px solid var(--purplish-blue)"
-        : "1px solid var(--light-gray)"};
-  `;
 
   return (
     <div>
