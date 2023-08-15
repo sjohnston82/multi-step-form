@@ -7,6 +7,10 @@ const ToggleWrapper = styled.div`
   justify-content: center;
   gap: 1rem;
   margin: 2rem 0 1rem 0;
+
+  @media (min-width: 768px) {
+    margin-top: 2.5rem;
+  }
 `;
 
 const ToggleOptionText = styled.h5<{ isMonthly: boolean }>`
@@ -22,6 +26,8 @@ const SwitchContainer = styled.div`
   position: relative;
   border-radius: 10px;
   cursor: pointer;
+
+  
 `;
 const SwitchDot = styled.span<{ isMonthly: boolean }>`
   background-color: var(--alabaster);

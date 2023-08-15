@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { styled } from "styled-components";
 import MobileBanner from "../../public/images/bg-sidebar-mobile.svg";
+import DesktopBanner from "../../public/images/bg-sidebar-desktop.svg";
 import StepCounter from "./_components/StepCounter";
 import FormOneContainer from "./_components/FormOneContainer";
 import StepChanger from "./_components/StepChanger";
@@ -18,12 +19,56 @@ const BackgroundImageMobile = styled.div`
   z-index: 0;
   top: 50;
   background: green;
+
+  @media (min-width: 768px) {
+    visibility: hidden;
+  }
+`;
+
+const DesktopImageContainer = styled.div`
+  width: 274px;
+  margin-right: auto;
+  padding: 1rem;
 `;
 
 const StyledImage = styled(Image)`
   position: absolute;
   z-index: 0;
   width: 100dvw;
+  
+  @media (min-width: 768px) {
+    width: 274px;
+    
+  }
+`;
+
+const DesktopFormWrapper = styled.div`
+  width: 60vw;
+  height: 600px;
+
+  background-color: var(--alabaster);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const DesktopFormContainer = styled.div`
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  
+ 
+`;
+
+const MobileWrapper = styled.div`
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledMain = styled.main`
@@ -33,6 +78,12 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   background-color: var(--really-light-gray);
+
+  @media (min-width: 768px) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
 `;
 
 export default function Home() {
@@ -53,12 +104,26 @@ export default function Home() {
   }
   return (
     <StyledMain>
-      <BackgroundImageMobile>
-        <StyledImage src={MobileBanner} alt="Mobile sized background banner." />
-      </BackgroundImageMobile>
-      <StepCounter />
-
-      {getFormByStep()}
+      <MobileWrapper>
+        <BackgroundImageMobile>
+          <StyledImage
+            src={MobileBanner}
+            alt="Mobile sized background banner."
+          />
+        </BackgroundImageMobile>
+        <StepCounter />
+        {getFormByStep()}
+      </MobileWrapper>
+      <DesktopFormWrapper>
+        <DesktopImageContainer>
+          <StyledImage src={DesktopBanner} alt="Desktop banner" />
+          <StepCounter />
+        </DesktopImageContainer>
+        <DesktopFormContainer>
+          {getFormByStep()}
+          
+        </DesktopFormContainer>
+      </DesktopFormWrapper>
     </StyledMain>
   );
 }

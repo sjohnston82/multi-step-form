@@ -19,24 +19,47 @@ const FormTwoWrapper = styled.div`
   position: relative;
   padding: 1.5rem;
   border-radius: 15px;
+
+  @media (min-width: 768px) {
+    width: 440px;
+    /* flex: 1; */
+    background: transparent;
+  }
 `;
 const FormTwoHeading = styled.h1`
   color: var(--marine-blue);
   font-size: 26px;
   margin-bottom: 0.8rem;
   /* font-family: var(--font-ubuntu); */
+
+  @media (min-width: 768px) {
+    
+    margin-bottom: .5rem;
+  }
 `;
 const FormTwoSubheading = styled.h2`
   color: var(--cool-gray);
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 0.8rem;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 2.2rem;
+  }
 `;
 
 const PlanButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    
+    
+  }
 `;
 
 const PlanButtonContent = styled.div`
@@ -45,6 +68,12 @@ const PlanButtonContent = styled.div`
   padding: 0.8rem;
   gap: 0.5rem;
   background-color: transparent;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+  }
 `;
 const PlanButtonTextWrapper = styled.div`
   display: flex;
@@ -59,7 +88,9 @@ const FreeMonthsText = styled.p`
   color: var(--marine-blue);
 `;
 
-const StyledImage = styled(Image)``;
+const StyledImage = styled(Image)`
+  width: 35px;
+`;
 
 const PlanTitle = styled.p`
   color: var(--marine-blue);
@@ -81,13 +112,23 @@ const PlanButton = styled.button<{ isSelected: boolean }>`
     props.isSelected
       ? "1px solid var(--purplish-blue)"
       : "1px solid var(--light-gray)"};
+
+  
+`;
+
+const FormAndStepChange = styled.div`
+  @media (min-width: 768px) {
+    /* width: 300px; */
+    padding: 0 1rem;
+    position: relative;
+  }
 `;
 
 const FormTwoContainer = () => {
   const { plan, setPlan, monthly } = useFormContext();
 
   return (
-    <div>
+    <FormAndStepChange>
       <FormTwoWrapper>
         <FormTwoHeading>Select your plan</FormTwoHeading>
         <FormTwoSubheading>
@@ -137,7 +178,7 @@ const FormTwoContainer = () => {
         <BillCycleToggle />
       </FormTwoWrapper>
       <StepChanger />
-    </div>
+    </FormAndStepChange>
   );
 };
 

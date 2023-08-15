@@ -13,6 +13,14 @@ const StepChangeContainer = styled.div`
   background-color: var(--magnolia);
   width: 100vw;
   display: flex;
+
+   @media (min-width: 768px) {
+    width: 450px;
+    position: absolute;
+    /* margin-top: 4rem; */
+    bottom: 1rem;
+    background-color: transparent;
+   }
 `;
 
 const ButtonWrapper = styled.div`

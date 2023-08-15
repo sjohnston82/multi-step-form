@@ -27,6 +27,14 @@ type StepOneInputProps = {
   phoneNumber: string;
 };
 
+const FormAndStepChange = styled.div`
+   @media (min-width: 768px) {
+    /* width: 300px; */
+    padding: 0 1rem;
+    position: relative;
+   }
+`;
+
 const FormOneWrapper = styled.div`
   width: 90vw;
   display: flex;
@@ -38,6 +46,12 @@ const FormOneWrapper = styled.div`
   position: relative;
   padding: 1.5rem;
   border-radius: 15px;
+
+  @media (min-width: 768px) {
+    width: 440px;
+    /* flex: 1; */
+    background: transparent;
+  }
 `;
 const FormOneHeading = styled.h1`
   color: var(--marine-blue);
@@ -50,12 +64,22 @@ const FormOneSubheading = styled.h2`
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 0.6rem;
+
+   @media (min-width: 768px) {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 2.2rem;
+   }
 `;
 
 const StyledFormOne = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+   @media (min-width: 768px) {
+    gap: 1.3rem;
+   }
 `;
 const StyledInputLabel = styled.label`
   color: var(--marine-blue);
@@ -120,7 +144,7 @@ const FormOneContainer = () => {
     setStep(step + 1);
   };
   return (
-    <div>
+    <FormAndStepChange>
       <FormOneWrapper>
         <FormOneHeading>Personal info</FormOneHeading>
         <FormOneSubheading>
@@ -143,7 +167,7 @@ const FormOneContainer = () => {
           </div>
           <div className="">
             <StyledLabelAndError>
-              <StyledInputLabel htmlFor="emialAddress">
+              <StyledInputLabel htmlFor="emailAddress">
                 Email Address
               </StyledInputLabel>
               {errors.emailAddress?.message && (
@@ -176,7 +200,7 @@ const FormOneContainer = () => {
         </StyledFormOne>
       </FormOneWrapper>
       <StepChanger formRef={formRef} />
-    </div>
+    </FormAndStepChange>
   );
 };
 

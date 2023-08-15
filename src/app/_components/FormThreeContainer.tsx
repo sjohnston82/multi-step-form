@@ -14,6 +14,12 @@ const FormThreeWrapper = styled.div`
   position: relative;
   padding: 1.5rem;
   border-radius: 15px;
+
+  @media (min-width: 768px) {
+    width: 440px;
+    /* flex: 1; */
+    background: transparent;
+  }
 `;
 const FormThreeHeading = styled.h1`
   color: var(--marine-blue);
@@ -26,6 +32,12 @@ const FormThreeSubheading = styled.h2`
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 0.8rem;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 2.2rem;
+  }
 `;
 
 const AddOnsButtonGroup = styled.div`
@@ -57,6 +69,10 @@ const AddOnButton = styled.button<{ isSelected: boolean }>`
     border: 1px solid var(--purplish-blue);
   }
   cursor: pointer;
+
+  @media (min-width: 768px) {
+   padding: 0.5em
+  }
 `;
 
 const StyledCheckbox = styled.input<{ isSelected: boolean }>`
@@ -101,10 +117,18 @@ const AddOnsDescription = styled.p`
   text-align: left;
 `;
 
+const FormAndStepChange = styled.div`
+  @media (min-width: 768px) {
+    /* width: 300px; */
+    padding: 0 1rem;
+    position: relative;
+  }
+`;
+
 const FormThreeContainer = () => {
   const { addOns, setAddOns, monthly, step, setStep } = useFormContext();
   return (
-    <div className="">
+    <FormAndStepChange>
       <FormThreeWrapper>
         <FormThreeHeading>Pick add-ons</FormThreeHeading>
         <FormThreeSubheading>
@@ -192,7 +216,7 @@ const FormThreeContainer = () => {
         </AddOnsButtonGroup>
       </FormThreeWrapper>
       <StepChanger />
-    </div>
+    </FormAndStepChange>
   );
 };
 
