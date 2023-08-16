@@ -15,7 +15,7 @@ const StepChangeContainer = styled.div`
   display: flex;
 
    @media (min-width: 768px) {
-    width: 450px;
+    width: 500px;
     position: absolute;
     /* margin-top: 4rem; */
     bottom: 1rem;

@@ -16,7 +16,7 @@ const FormThreeWrapper = styled.div`
   border-radius: 15px;
 
   @media (min-width: 768px) {
-    width: 440px;
+    width: 510px;
     /* flex: 1; */
     background: transparent;
   }
@@ -34,7 +34,7 @@ const FormThreeSubheading = styled.h2`
   margin-bottom: 0.8rem;
 
   @media (min-width: 768px) {
-    font-size: 14px;
+
     font-weight: 400;
     margin-bottom: 2.2rem;
   }
@@ -115,6 +115,10 @@ const AddOnsDescription = styled.p`
   color: var(--cool-gray);
   font-size: 12px;
   text-align: left;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const FormAndStepChange = styled.div`

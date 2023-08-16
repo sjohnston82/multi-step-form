@@ -21,7 +21,7 @@ const FormTwoWrapper = styled.div`
   border-radius: 15px;
 
   @media (min-width: 768px) {
-    width: 440px;
+    width: 510px;
     /* flex: 1; */
     background: transparent;
   }
@@ -33,8 +33,7 @@ const FormTwoHeading = styled.h1`
   /* font-family: var(--font-ubuntu); */
 
   @media (min-width: 768px) {
-    
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 `;
 const FormTwoSubheading = styled.h2`
@@ -44,7 +43,7 @@ const FormTwoSubheading = styled.h2`
   margin-bottom: 0.8rem;
 
   @media (min-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     margin-bottom: 2.2rem;
   }
@@ -57,8 +56,6 @@ const PlanButtonGroup = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    
-    
   }
 `;
 
@@ -108,12 +105,15 @@ const PlanButton = styled.button<{ isSelected: boolean }>`
   border-radius: 8px;
   background-color: transparent;
   outline: none;
+  cursor: pointer;
   border: ${(props) =>
     props.isSelected
       ? "1px solid var(--purplish-blue)"
       : "1px solid var(--light-gray)"};
 
-  
+  &:hover {
+    border: 1px solid var(--purplish-blue);
+  }
 `;
 
 const FormAndStepChange = styled.div`

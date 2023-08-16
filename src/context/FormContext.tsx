@@ -5,6 +5,7 @@ import React, {
   type SetStateAction,
   useState,
   useContext,
+  useEffect,
 } from "react";
 
 type FormContextType = {
@@ -64,7 +65,13 @@ const FormContextProvider = ({ children }: FormContextProviderProps) => {
     customizableProfile: false,
   });
   const [total, setTotal] = useState(0);
-   const [confirmed, setConfirmed] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
+
+  useEffect(() => {
+    if (step < 4 && confirmed) {
+      setConfirmed(false);
+    }
+  }, [confirmed, step]);
 
   return (
     <FormContext.Provider
@@ -82,7 +89,7 @@ const FormContextProvider = ({ children }: FormContextProviderProps) => {
         total,
         setTotal,
         confirmed,
-        setConfirmed
+        setConfirmed,
       }}
     >
       {children}

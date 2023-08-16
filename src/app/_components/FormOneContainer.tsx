@@ -28,11 +28,11 @@ type StepOneInputProps = {
 };
 
 const FormAndStepChange = styled.div`
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     /* width: 300px; */
     padding: 0 1rem;
     position: relative;
-   }
+  }
 `;
 
 const FormOneWrapper = styled.div`
@@ -48,7 +48,7 @@ const FormOneWrapper = styled.div`
   border-radius: 15px;
 
   @media (min-width: 768px) {
-    width: 440px;
+    width: 510px;
     /* flex: 1; */
     background: transparent;
   }
@@ -65,11 +65,11 @@ const FormOneSubheading = styled.h2`
   line-height: 1.5;
   margin-bottom: 0.6rem;
 
-   @media (min-width: 768px) {
-    font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 16px;
     font-weight: 400;
     margin-bottom: 2.2rem;
-   }
+  }
 `;
 
 const StyledFormOne = styled.form`
@@ -77,9 +77,9 @@ const StyledFormOne = styled.form`
   flex-direction: column;
   gap: 1rem;
 
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     gap: 1.3rem;
-   }
+  }
 `;
 const StyledInputLabel = styled.label`
   color: var(--marine-blue);
@@ -92,6 +92,7 @@ const StyledInput = styled.input`
   border-radius: 5px;
   padding: 1rem;
   margin-top: 6px;
+  cursor: pointer;
 
   &::placeholder {
     color: var(--cool-gray);

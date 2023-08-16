@@ -15,6 +15,12 @@ const FormFourWrapper = styled.div`
   position: relative;
   padding: 1.5rem;
   border-radius: 15px;
+
+  @media (min-width: 768px) {
+    width: 510px;
+    /* flex: 1; */
+    background: transparent;
+  }
 `;
 const FormFourHeading = styled.h1`
   color: var(--marine-blue);
@@ -28,6 +34,12 @@ const FormFourSubheading = styled.h2`
   line-height: 1.5;
   margin-bottom: 0.8rem;
   font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-weight: 400;
+
+    margin-bottom: 2.5rem;
+  }
 `;
 
 const CostSummaryWrapper = styled.div`
@@ -61,9 +73,13 @@ const PlanChangeButton = styled.button`
   background-color: transparent;
   text-decoration-thickness: 2px;
   cursor: pointer;
-  
+
   &:hover {
     color: var(--purplish-blue);
+  }
+
+  @media (min-width: 768px) {
+    font-size: 14px;
   }
 `;
 
@@ -106,6 +122,10 @@ const TotalCostContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 1rem 1rem 1rem;
+
+  @media (min-width: 768px) {
+    margin-top: .5rem;
+  }
 `;
 
 const TotalDescription = styled.p`
@@ -118,8 +138,17 @@ const TotalCost = styled.h3`
   font-weight: bold;
 `;
 
+const FormAndStepChange = styled.div`
+  @media (min-width: 768px) {
+    /* width: 300px; */
+    padding: 0 1rem;
+    position: relative;
+  }
+`;
+
+
 const FormFourContainer = () => {
-  const { step, setStep, plan, monthly, addOns, total, setTotal, confirmed } =
+  const { setStep, plan, monthly, addOns, total, setTotal, confirmed } =
     useFormContext();
   const [hasAddOns, setHasAddOns] = useState(false);
 
@@ -163,7 +192,7 @@ const FormFourContainer = () => {
     addOns.onlineService,
   ]);
   return !confirmed ? (
-    <div>
+    <FormAndStepChange>
       <FormFourWrapper>
         <FormFourHeading>Finishing up</FormFourHeading>
         <FormFourSubheading>
@@ -224,7 +253,7 @@ const FormFourContainer = () => {
         </TotalCostContainer>
       </FormFourWrapper>
       <StepChanger />
-    </div>
+    </FormAndStepChange>
   ) : (
     <ConfirmationPage />
   );

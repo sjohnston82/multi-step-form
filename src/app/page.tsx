@@ -43,7 +43,7 @@ const StyledImage = styled(Image)`
 `;
 
 const DesktopFormWrapper = styled.div`
-  width: 60vw;
+  width: 66vw;
   height: 600px;
 
   background-color: var(--alabaster);
