@@ -48,8 +48,6 @@ Users should be able to:
 - [Next.js](https://nextjs.org/) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### What I learned
 
 This one was a lot of work compared to the other challenges I've completed on FrontendMentor, but it was a lot of fun!
