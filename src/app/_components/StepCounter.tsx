@@ -33,7 +33,7 @@ const StepTextContainer = styled.div`
   }
 `;
 const StepTitle = styled.p`
-visibility: hidden;
+  visibility: hidden;
   @media (min-width: 768px) {
     visibility: visible;
     color: var(--cool-gray);
@@ -43,7 +43,7 @@ visibility: hidden;
 `;
 
 const StepDescription = styled.h4`
-display: none;
+  display: none;
   @media (min-width: 768px) {
     display: block;
     color: var(--alabaster);
@@ -67,7 +67,8 @@ const StepCounter = () => {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: ${(props) => (props.$step === step ? "white" : "transparent")};
+    background: ${(props) =>
+      props.$step === step ? "var(--light-blue)" : "transparent"};
   `;
 
   return (

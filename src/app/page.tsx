@@ -35,22 +35,20 @@ const StyledImage = styled(Image)`
   position: absolute;
   z-index: 0;
   width: 100dvw;
-  
+
   @media (min-width: 768px) {
     width: 274px;
-    
   }
 `;
 
 const DesktopFormWrapper = styled.div`
-  width: 66vw;
+  width: 951px;
   height: 600px;
 
   background-color: var(--alabaster);
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
-  
 
   @media (max-width: 768px) {
     display: none;
@@ -61,8 +59,16 @@ const DesktopFormContainer = styled.div`
   display: flex;
   flex: 1;
   justify-content: center;
-  
- 
+`;
+
+const Window = styled.div`
+  @media (min-width: 768px) {
+    width: 100vw;
+    height: 100dvh;
+    background-color: var(--really-light-gray);
+    display: grid;
+    place-items: center;
+  }
 `;
 
 const MobileWrapper = styled.div`
@@ -77,9 +83,11 @@ const StyledMain = styled.main`
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: var(--really-light-gray);
+  background-color: var(--light-blue);
 
   @media (min-width: 768px) {
+    width: 1440px;
+    height: 900px;
     justify-content: center;
     align-items: center;
     flex-direction: row;
@@ -103,27 +111,26 @@ export default function Home() {
     }
   }
   return (
-    <StyledMain>
-      <MobileWrapper>
-        <BackgroundImageMobile>
-          <StyledImage
-            src={MobileBanner}
-            alt="Mobile sized background banner."
-          />
-        </BackgroundImageMobile>
-        <StepCounter />
-        {getFormByStep()}
-      </MobileWrapper>
-      <DesktopFormWrapper>
-        <DesktopImageContainer>
-          <StyledImage src={DesktopBanner} alt="Desktop banner" />
+    <Window>
+      <StyledMain>
+        <MobileWrapper>
+          <BackgroundImageMobile>
+            <StyledImage
+              src={MobileBanner}
+              alt="Mobile sized background banner."
+            />
+          </BackgroundImageMobile>
           <StepCounter />
-        </DesktopImageContainer>
-        <DesktopFormContainer>
           {getFormByStep()}
-          
-        </DesktopFormContainer>
-      </DesktopFormWrapper>
-    </StyledMain>
+        </MobileWrapper>
+        <DesktopFormWrapper>
+          <DesktopImageContainer>
+            <StyledImage src={DesktopBanner} alt="Desktop banner" />
+            <StepCounter />
+          </DesktopImageContainer>
+          <DesktopFormContainer>{getFormByStep()}</DesktopFormContainer>
+        </DesktopFormWrapper>
+      </StyledMain>
+    </Window>
   );
 }
